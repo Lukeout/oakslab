@@ -1,0 +1,51 @@
+<html>
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<header>
+<% include ./partials/header %>
+</header>
+
+<form action="/search" method="post">
+<fieldset>
+<div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" id="query" name="query" placeholder="Search for Pokemon #">
+       <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">Search</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</fieldset>
+</form>
+
+<% for(var i=0; i < results.length; i++) { %>
+
+    <img src='/images/sprites/<%= results[i]._source.pokemon %>.png' />
+
+    <p>
+    CP: <%- results[i]._source.cp %>
+    </p>
+
+    <p>
+    Move1: <%- results[i]._source.move1 %>
+    </p>
+
+    <p>
+    Move2: <%- results[i]._source.move2 %>
+    </p>
+
+    <p>
+    Price: $<%- results[i]._source.price %>
+    </p>
+
+    <p>
+    Owner: <%- results[i]._source.owner %>
+    </p>
+<% } %>
+
+</body>
+</html>

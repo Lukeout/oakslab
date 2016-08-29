@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<header>
+<% include ./partials/header %>
+</header>
+
+<p>
+Post Listing: (You must be logged in and have received an auth token, document.cookie)
+</p>
+
+<form action="/postlisting" method="post">
+<fieldset>
+<label for="PostListing">Pokemon: (Enter Pokemon Number)</label>
+<input id="pokemon" name="pokemon" placeholder="Enter pokemon #" required/>
+<br />
+<label for="cp">CP:</label>
+<input id="cp" name="cp" placeholder="Enter Pokemon CP" required/>
+<br />
+<label for="move1">Move 1:</label>
+<input type="move1" id="move1" name="move1" placeholder="Enter Move 1" required/>
+<br />
+<label for="move2">Move 2:</label>
+<input type="move2" id="move2" name="move2" placeholder="Enter Move 2" required/>
+<br />
+<label for="price">Price:</label>
+<input type="price" id="price" name="price" placeholder="Enter your price" required/>
+<br />
+<button type="submit">Submit</button>
+</fieldset>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+mongo:
+    image: mongo:latest
+    ports:
+        - "27017:27017"
+    restart: always
+
+models:
+    image: node:latest
+    container_name: models
+    links:
+        - mongo 
+    ports:
+        - "8001:8000"
+    volumes:
+        - ./models:/app
+    working_dir: /app 
+    command: "npm start"
+
+exp:
+    image: beevelop/nodejs-python
+    container_name: exp
+    links:
+        - models
+        - es
+        - kafka
+    ports:
+        - "8002:8000"
+    volumes:
+        - ./exp:/app
+    working_dir: /app
+    command: "npm start"
+
+web:
+    image: node:latest
+    container_name: web
+    links:
+        - exp
+    ports:
+        - "8003:8000"
+    volumes:
+        - ./web:/app
+    working_dir: /app
+    command: "npm start"
+
+kafka:
+   image: spotify/kafka
+   container_name: kafka
+   environment:
+      ADVERTISED_HOST: kafka
+      ADVERTISED_PORT: 9092
+   hostname: kafka
+
+es:
+   image: elasticsearch:2.0
+   container_name: es
+   ports:
+      - "9200:9200"   
+

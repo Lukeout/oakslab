@@ -1,0 +1,26 @@
+<html>
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<header>
+<% include ./partials/header %>
+</header>
+
+<form action="/search" method="post">
+<fieldset>
+<div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" id="query" name="query" placeholder="Search for Pokemon #">
+       <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">Search</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</fieldset>
+</form>
+
+</body>
+</html>

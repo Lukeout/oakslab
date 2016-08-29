@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<header>
+<% include ./partials/header %>
+</header>
+
+<p>
+Logging you out, this will delete your token to create listings
+</p>
+
+<form action="/login/logout" method="post">
+<fieldset>
+<button type="submit">Logout</button>
+</fieldset>
+
+</form>
+
+</body>
+</html>

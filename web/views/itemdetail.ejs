@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<header>
+<% include ./partials/header %>
+</header>
+
+<p>
+This is a listing
+</p>
+
+<img src='/images/sprites/<%= item.message.pokemon %>.png' />
+
+<p>
+CP: <%- item.message.cp %>
+</p>
+
+<p>
+Move1: <%- item.message.move1 %>
+</p>
+
+<p>
+Move2: <%- item.message.move2 %>
+</p>
+
+<p>
+Price: $<%- item.message.price %>
+</p>
+
+<p>
+Owner: <%- item.message.owner %>
+</p>
+
+</body>
+</html>
