@@ -56,3 +56,15 @@ es:
    ports:
       - "9200:9200"   
 
+#batch:
+#   image: tp33/django
+#   container_name: batch
+#   links:
+#      - kafka:kafka
+#      - es:es
+#   volumes:
+#      - ./scripts:/app
+#   working_dir: /app
+#   ports:
+#      - "8004:8000"
+#   command: "python indexRefresh.py"
