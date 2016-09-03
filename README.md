@@ -21,3 +21,4 @@ Mongoose models that interact directly with the MongoDB (listings and users). Ba
 * Load balancing on front-end
 * Testing
 * Caching 
+* Look into a SQL DB instead of MongoDB, postgres supports JSON fields too
